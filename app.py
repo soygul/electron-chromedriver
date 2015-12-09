@@ -37,12 +37,7 @@ time.sleep(2)
 connect_button = driver.find_element_by_css_selector('#signInButton')
 connect_button.click()
 
-# wait for sign in
-time.sleep(15)
-
-# todo:
-# maybe we should listen for polymer events rather than waits
-# if spectron (https://github.com/kevinsawicki/spectron) is doing it, we can make a python port of it
+time.sleep(15)  # wait for sign in
 
 menu_button = driver.find_element_by_css_selector('#menuButton')
 menu_button.click()
