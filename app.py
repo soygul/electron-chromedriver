@@ -1,5 +1,7 @@
 # https://sites.google.com/a/chromium.org/chromedriver/getting-started
 
+# alternative for not restarting the chromedriver for every test case and continuously use existing instance
+
 # import time
 # from selenium import webdriver
 # import selenium.webdriver.chrome.service as service
@@ -24,6 +26,7 @@ electron_path = "/Users/teo/dev/sc-ui/dist/AppGate XDP-darwin-x64/AppGate XDP.ap
 opts = Options()
 opts.binary_location = electron_path
 driver = webdriver.Chrome(executable_path=chromedriver_path, chrome_options=opts)
+driver.implicitly_wait(15)  # seconds
 
 time.sleep(3)
 
