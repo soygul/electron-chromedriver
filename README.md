@@ -13,4 +13,4 @@ chromedriver_path = "./chromedriver"
 electron_path = "//Applications/MyApp.app/Contents/MacOS/Electron"
 ```
 
-If you want to bind to an existing ChromeDriver rather than starting and stopping it for every test, see issue #3.
+If you want to bind to an existing ChromeDriver rather than starting and stopping it for every test, see [issue #3](https://github.com/soygul/electron-chromedriver/issues/3).
