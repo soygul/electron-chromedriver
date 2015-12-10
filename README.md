@@ -13,5 +13,11 @@ chromedriver_path = "./chromedriver"
 electron_path = "/Applications/MyApp.app/Contents/MacOS/Electron"
 ```
 
+You also need to download [chromedriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) binary and extract it to the repo root, and install `selenium` package:
+
+```python
+pip3 install selenium
+```
+
 ## Reusing ChromeDriver Service
 If you want to bind to an existing ChromeDriver rather than starting and stopping it for every test, see [issue #3](https://github.com/soygul/electron-chromedriver/issues/3).
