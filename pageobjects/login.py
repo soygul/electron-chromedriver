@@ -1,19 +1,16 @@
-class BasePage(object):
-    """Base class to initialize the base page that will be called from all pages"""
-
-    def __init__(self, driver):
-        self.driver = driver
+from pageobjects.page import PageObject
 
 
-class LoginPage(BasePage):
-    # Declares a variable that will contain the retrieved text
-    search_text_element = SearchTextElement()
+class LoginPage(PageObject):
+    to = lambda self: self.webdriver.find_element_by_css_selector("#send-presentation-overlay .to-textarea")
+    subject = lambda self: self.webdriver.find_element_by_xpath("//*[@id='send-presentation-overlay']//input[@name='subject']")
+    message_text = lambda self: self.webdriver.find_element_by_css_selector("#send-presentation-overlay .message-textarea")
+    send_button = lambda self: self.webdriver.find_element_by_css_selector("#send-presentation-overlay .submit")
 
-    def is_title_matches(self):
-        """Verifies that the hardcoded text "Python" appears in page title"""
-        return "Python" in self.driver.title
 
-    def click_go_button(self):
-        """Triggers the search"""
-        element = self.driver.find_element(*MainPageLocators.GO_BUTTON)
-        element.click()
+def send_message(self, to_address, subject, message):
+    self.to().send_keys(to_address)
+    self.subject().send_keys(subject)
+
+    # switch message input to text input to make it easier to set the message.
+    self.message_text().send_keys(message)
