@@ -2,11 +2,9 @@ from pageobjects.base import PageObject
 
 
 class LoginPage(PageObject):
-    def __username(self): return self.driver.find_element_by_css_selector(
-            '#cards > div.cards.style-scope.task-cards > task-card > sign-in > div > div > paper-input:nth-child(3) > paper-input-container > div.input-content.style-scope.paper-input-container #labelAndInputContainer #input')
+    def __username(self): return self.driver.find_element_by_id('username')
 
-    def __password(self): return self.driver.find_element_by_css_selector(
-            '#cards > div.cards.style-scope.task-cards > task-card > sign-in > div > div > paper-input:nth-child(4) > paper-input-container > div.input-content.style-scope.paper-input-container #labelAndInputContainer #input')
+    def __password(self): return self.driver.find_element_by_id('password')
 
     def __connect_button(self): return self.driver.find_element_by_css_selector('#signInButton')
 
