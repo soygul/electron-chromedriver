@@ -60,5 +60,5 @@ target/
 *.iml
 .idea/
 
-# ChromeDriver
+# ChromeDriver binary
 chromedriver
